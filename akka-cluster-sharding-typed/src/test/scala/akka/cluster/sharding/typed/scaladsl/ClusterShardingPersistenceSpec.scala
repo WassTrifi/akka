@@ -447,7 +447,7 @@ class ClusterShardingPersistenceSpec extends ScalaTestWithActorTestKit(ClusterSh
       ref ! Add("4")
 
       ref ! PassivateAndPersist("5")(p1.ref)
-      p1.receiveOne()
+      p1.receiveMessage()
 
       ref ! Add("6")
       // user was stash discarded, i.e. 3 and 4 not handled
